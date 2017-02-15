@@ -68603,7 +68603,7 @@ __d(/* auth/src/App.js */function(global, require, module, exports) {Object.defi
 var _reactNative=require(12            ); // 12 = react-native
 var _firebase=require(404       );var _firebase2=babelHelpers.interopRequireDefault(_firebase); // 404 = firebase
 var _common=require(409                  ); // 409 = ./components/common
-var _LoginForm=require(415                     );var _LoginForm2=babelHelpers.interopRequireDefault(_LoginForm);var // 415 = ./components/LoginForm
+var _LoginForm=require(416                     );var _LoginForm2=babelHelpers.interopRequireDefault(_LoginForm);var // 416 = ./components/LoginForm
 
 App=function(_Component){babelHelpers.inherits(App,_Component);function App(){var _ref;var _temp,_this,_ret;babelHelpers.classCallCheck(this,App);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=babelHelpers.possibleConstructorReturn(this,(_ref=App.__proto__||Object.getPrototypeOf(App)).call.apply(_ref,[this].concat(args))),_this),_this.
 state={loggedIn:null},_temp),babelHelpers.possibleConstructorReturn(_this,_ret);}babelHelpers.createClass(App,[{key:'componentWillMount',value:function componentWillMount()
@@ -68630,7 +68630,11 @@ _this2.setState({loggedIn:false});
 {
 switch(this.state.loggedIn){
 case true:
-return _react2.default.createElement(_common.CardSection,null,_react2.default.createElement(_common.Button,null,'Log Out'));
+return(
+_react2.default.createElement(_common.CardSection,null,
+_react2.default.createElement(_common.Button,{onPress:function onPress(){return _firebase2.default.auth().signOut();}},'Log Out')));
+
+
 case false:
 return _react2.default.createElement(_LoginForm2.default,null);
 default:
@@ -69271,7 +69275,7 @@ __d(/* auth/src/components/common/index.js */function(global, require, module, e
 Object.keys(_Card).forEach(function(key){if(key==="default"||key==="__esModule")return;Object.defineProperty(exports,key,{enumerable:true,get:function get(){return _Card[key];}});});var _CardSection=require(412            ); // 412 = ./CardSection
 Object.keys(_CardSection).forEach(function(key){if(key==="default"||key==="__esModule")return;Object.defineProperty(exports,key,{enumerable:true,get:function get(){return _CardSection[key];}});});var _Header=require(413       ); // 413 = ./Header
 Object.keys(_Header).forEach(function(key){if(key==="default"||key==="__esModule")return;Object.defineProperty(exports,key,{enumerable:true,get:function get(){return _Header[key];}});});var _Input=require(414      ); // 414 = ./Input
-Object.keys(_Input).forEach(function(key){if(key==="default"||key==="__esModule")return;Object.defineProperty(exports,key,{enumerable:true,get:function get(){return _Input[key];}});});var _Spinner=require(416        ); // 416 = ./Spinner
+Object.keys(_Input).forEach(function(key){if(key==="default"||key==="__esModule")return;Object.defineProperty(exports,key,{enumerable:true,get:function get(){return _Input[key];}});});var _Spinner=require(415        ); // 415 = ./Spinner
 Object.keys(_Spinner).forEach(function(key){if(key==="default"||key==="__esModule")return;Object.defineProperty(exports,key,{enumerable:true,get:function get(){return _Spinner[key];}});});
 }, 409, null, "auth/src/components/common/index.js");
 __d(/* auth/src/components/common/Button.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.Button=undefined;var _react=require(279    );var _react2=babelHelpers.interopRequireDefault(_react); // 279 = react
@@ -69478,7 +69482,7 @@ alignItems:'center'}};exports.
 
 
 Spinner=Spinner;
-}, 416, null, "auth/src/components/common/Spinner.js");
+}, 415, null, "auth/src/components/common/Spinner.js");
 __d(/* auth/src/components/LoginForm.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(279    );var _react2=babelHelpers.interopRequireDefault(_react); // 279 = react
 var _reactNative=require(12            ); // 12 = react-native
 var _common=require(409       ); // 409 = ./common
@@ -69569,7 +69573,7 @@ color:'red'}};exports.default=
 
 
 LoginForm;
-}, 415, null, "auth/src/components/LoginForm.js");
+}, 416, null, "auth/src/components/LoginForm.js");
 ;require(215);
 ;require(0);
 //# sourceMappingURL=index.ios.map
